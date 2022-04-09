@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Layout</title>
+    <script>
+        function resizeIframe(obj) {
+            var h = obj.contentWindow.document.body.scrollHeight;
+            h = h < 400 ? 400 : h;
+            obj.style.height = h + 'px';
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 90%;
+            margin: auto;
+        }
+
+        header {
+            position: relative;
+            background-color: orange;
+            background-image: url(images/banner1.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 200px;
+        }
+
+        header>img {
+            width: 200px;
+            position: absolute;
+            background-color: antiquewhite;
+            opacity: 70%;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        nav {
+            background-color: rgb(30, 199, 30);
+            line-height: 40px;
+            font-size: 20px;
+        }
+
+        nav>ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border-radius: 3px;
+            background-color: orange;
+        }
+
+        nav>ul>li {
+            display: inline-block;
+        }
+
+        nav>ul>li>a {
+            text-decoration: none;
+            font-variant: small-caps;
+            font-size: larger;
+            color: white;
+            padding: 0 10px;
+            line-height: 40px;
+        }
+
+        nav>ul>li>a:hover {
+            color: yellow;
+        }
+
+        .noidung {
+            min-height: 400px;
+        }
+
+        article {
+            background-color: rgb(222, 250, 191);
+            height: 100%;
+            width: 80%;
+            float: left;
+        }
+
+        aside {
+            height: 100%;
+            width: 20%;
+            float: left;
+        }
+
+        footer {
+            background-color: plum;
+            height: 50px;
+            clear: both;
+        }
+
+        iframe {
+            width: 100%;
+            min-height: ;
+        }
+
+        #dautrang {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            color: yellow;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        ul.vmenu {
+            margin: 0;
+            padding: 0;
+            border-radius: 5px;
+            box-shadow: 0 0 5px orange;
+            list-style: none;
+        }
+
+        ul.vmenu>li>a {
+            font-size: 30px;
+            display: block;
+            line-height: 50px;
+            border-bottom: 1px dotted orangered;
+            text-decoration: none;
+            font-variant: small-caps;
+            color: rgb(53, 10, 247);
+            padding-left: 45px;
+            background: url('images/icon1.png') no-repeat 10px center;
+            background-size: 20px;
+        }
+
+        ul.vmenu>li>a:hover {
+            background: url('images/icon2.png') no-repeat 10px center;
+            background-size: 25px;
+            background-color: rgb(241, 129, 64);
+            color: white
+        }
+
+        #menu_top {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 40px;
+            background-color: rgb(17, 14, 224);
+            border-bottom-left-radius: 20px;
+            box-shadow: 0 2px 10px white;
+        }
+
+        #menu_top a {
+            font-weight: bolder;
+            font-size: 15px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="images/Poly.png" alt="">
+        <div id="menu_top">
+            <a href="">Đăng nhập</a>
+            <a href="">Đăng ký</a>
+            <a href="">Quên mật khẩu</a>
+        </div>
+        <!-- <img src="images/icon1.png" alt=""> -->
+    </header>
+    <nav>
+        <ul>
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="sanpham_new.html" target="view">Sản phẩm</a></li>
+            <li><a href="gioithieu.html" target="view">Giới thiệu</a></li>
+            <li><a href="lienhe.html" target="view">Liên hệ</a></li>
+            <li><a href="">Giợi ý</a></li>
+            <li><a href="">Hỏi đáp</a></li>
+        </ul>
+    </nav>
+    <div class="noidung">
+        <article>
+            <iframe src="sanpham_new.html" frameborder="0" name="view" scrolling="auto" onload="resizeIframe(this)"></iframe>
+            <button id="dautrang">Đầu trang</button>
+        </article>
+        <aside>
+            <ul class="vmenu">
+                <li><a href="">Hàng bán chạy</a></li>
+                <li><a href="">Hàng yêu thích</a></li>
+                <li><a href="">Hàng mới</a></li>
+                <li><a href="">Hàng đặc biệt</a></li>
+                <li><a href="">Hàng giảm giá</a></li>
+            </ul>
+        </aside>
+    </div>
+    <footer>Chân trang</footer>
+
+</body>
+
+</html>
